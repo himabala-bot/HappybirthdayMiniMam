@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import confetti from 'canvas-confetti';
-import { CONFETTI_PALETTE } from '../data/tributeData';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -67,7 +65,7 @@ export default function Navbar() {
       const targetScroll = top + target.offsetHeight * 0.4;
       window.scrollTo({ top: targetScroll, behavior: 'smooth' });
     } else {
-      const headerOffset = 80;
+      const headerOffset = 90;
       const elementPosition = target.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -78,53 +76,38 @@ export default function Navbar() {
     }
   };
 
-  const triggerCelebrate = (e) => {
-    e.stopPropagation();
-    confetti({
-      particleCount: 75,
-      spread: 65,
-      origin: { y: 0.15 },
-      colors: CONFETTI_PALETTE,
-      ticks: 200,
-      gravity: 1.1,
-      scalar: 0.9,
-    });
-  };
-
   return (
     <motion.header
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-3.5 sm:top-5 inset-x-0 z-[100] flex justify-center pointer-events-none px-3 sm:px-6"
+      className="fixed top-4 sm:top-6 inset-x-0 z-[100] flex justify-center pointer-events-none px-4 sm:px-6"
     >
       <nav
-        className={`pointer-events-auto relative flex items-center justify-between gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full border transition-all duration-300 select-none max-w-fit shadow-[0_10px_35px_rgba(66,47,14,0.08)] ${
+        className={`pointer-events-auto relative flex items-center justify-between gap-4 sm:gap-8 md:gap-10 px-5 sm:px-7 md:px-8 py-2.5 sm:py-3.5 rounded-full border transition-all duration-300 select-none max-w-fit shadow-[0_14px_40px_rgba(66,47,14,0.08),0_2px_8px_rgba(0,0,0,0.03)] ring-1 ring-black/[0.02] ${
           scrolled
-            ? 'bg-white/90 backdrop-blur-xl border-[#422F0E]/12 shadow-[0_12px_36px_rgba(66,47,14,0.12)]'
-            : 'bg-white/80 backdrop-blur-lg border-[#422F0E]/8'
+            ? 'bg-white/90 backdrop-blur-2xl border-[#422F0E]/12 shadow-[0_16px_45px_rgba(66,47,14,0.12)]'
+            : 'bg-white/80 backdrop-blur-xl border-[#422F0E]/10'
         }`}
       >
-        {/* Brand Chip */}
+        {/* Brand / Title - Clear Hierarchy */}
         <button
           onClick={(e) => handleNavClick(e, navItems[0])}
-          className="flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-bold text-[#1F150E] hover:bg-black/[0.04] transition-colors cursor-pointer shrink-0"
+          className="group flex items-center gap-2 text-sm sm:text-base font-extrabold text-[#1F150E] hover:opacity-85 transition-all cursor-pointer shrink-0 tracking-tight"
         >
-          <span className="text-[#EF6545] font-black text-sm">✦</span>
-          <span className="font-extrabold tracking-tight hidden sm:inline">Mini Ma'am</span>
+          <span className="text-[#EF6545] font-black text-base transition-transform group-hover:scale-110">✦</span>
+          <span>Mini Ma'am</span>
         </button>
 
-        <div className="h-4 w-[1px] bg-[#422F0E]/10 mx-0.5 shrink-0 hidden sm:block" />
-
-        {/* Nav Links with Generous Horizontal Spacing */}
-        <div className="flex items-center gap-1 sm:gap-2">
+        {/* Navigation Links with Spacious Natural Breathing Room */}
+        <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3.5">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`relative px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-[13px] font-semibold tracking-tight transition-colors duration-200 cursor-pointer whitespace-nowrap ${
+                className={`relative px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold tracking-tight transition-colors duration-200 cursor-pointer whitespace-nowrap ${
                   isActive
                     ? 'text-[#EF6545] font-bold'
                     : 'text-[#5C4A38] hover:text-[#1F150E] hover:bg-black/[0.03]'
@@ -142,20 +125,6 @@ export default function Navbar() {
             );
           })}
         </div>
-
-        <div className="h-4 w-[1px] bg-[#422F0E]/10 mx-0.5 shrink-0 hidden md:block" />
-
-        {/* Celebration Popping Button */}
-        <motion.button
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.94 }}
-          onClick={triggerCelebrate}
-          className="flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#EF6545] to-[#F49625] text-white text-xs sm:text-[13px] font-bold shadow-sm hover:shadow-md transition-all cursor-pointer shrink-0"
-          title="Shoot celebratory confetti!"
-        >
-          <span className="text-xs">🎉</span>
-          <span className="hidden md:inline">Celebrate</span>
-        </motion.button>
       </nav>
     </motion.header>
   );
