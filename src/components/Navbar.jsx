@@ -98,7 +98,7 @@ export default function Navbar() {
           minWidth: '580px',
           maxWidth: '920px',
         }}
-        className={`pointer-events-auto relative mx-auto hidden lg:flex flex-row items-center justify-between rounded-full border transition-colors duration-300 px-6 sm:px-8 py-3 select-none ${
+        className={`pointer-events-auto relative mx-auto hidden lg:flex flex-row items-center justify-between rounded-full border transition-colors duration-300 px-6 sm:px-8 py-4 sm:py-4.5 min-h-[62px] sm:min-h-[66px] select-none ${
           visible
             ? 'bg-white/90 border-[#422F0E]/12'
             : 'bg-white/80 border-[#422F0E]/8'
@@ -107,7 +107,7 @@ export default function Navbar() {
         {/* Brand / Logo */}
         <button
           onClick={(e) => handleNavClick(e, navItems[0])}
-          className="group relative z-20 flex items-center gap-2 text-sm sm:text-base font-extrabold text-[#1F150E] tracking-tight hover:opacity-85 transition-all cursor-pointer shrink-0"
+          className="group relative z-20 flex items-center gap-2 text-sm sm:text-base font-extrabold text-[#1F150E] tracking-tight hover:opacity-85 transition-all cursor-pointer shrink-0 py-1"
         >
           <span className="text-[#EF6545] font-black text-base transition-transform group-hover:scale-110">✦</span>
           <span>Mini Ma'am</span>
@@ -126,7 +126,7 @@ export default function Navbar() {
                 href={item.targetId ? `#${item.targetId}` : '#'}
                 onMouseEnter={() => setHoveredIdx(idx)}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`relative px-4 py-1.5 rounded-full transition-colors duration-200 cursor-pointer ${
+                className={`relative px-4 py-2 sm:py-2.5 rounded-full transition-colors duration-200 cursor-pointer ${
                   isActive
                     ? 'text-[#EF6545] font-bold'
                     : 'text-[#5C4A38] hover:text-[#1F150E]'
@@ -168,7 +168,7 @@ export default function Navbar() {
           stiffness: 220,
           damping: 36,
         }}
-        className={`pointer-events-auto relative mx-auto flex lg:hidden w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between rounded-full border px-4 py-2.5 transition-colors duration-300 ${
+        className={`pointer-events-auto relative mx-auto flex lg:hidden w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between rounded-full border px-5 py-3.5 sm:py-4 min-h-[56px] transition-colors duration-300 ${
           visible
             ? 'bg-white/90 border-[#422F0E]/12'
             : 'bg-white/80 border-[#422F0E]/8'
