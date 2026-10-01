@@ -48,14 +48,14 @@ export default function WaveHero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-start select-none w-[32%] max-w-[280px] sm:max-w-[360px]"
+            className="flex flex-col items-start select-none w-[32%] max-w-[280px] sm:max-w-[380px]"
           >
             <SparklesText
               text="HAPPY"
               colors={{ first: "#D4AF37", second: "#EF6545" }}
-              sparklesCount={7}
+              sparklesCount={8}
               className="hero-solid-title"
-              style={{ fontSize: 'clamp(2.8rem, 6.0vw, 5.8rem)' }}
+              style={{ fontSize: 'clamp(3.2rem, 7.2vw, 6.8rem)' }}
             />
           </motion.div>
 
@@ -67,14 +67,14 @@ export default function WaveHero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-end select-none text-right w-[32%] max-w-[280px] sm:max-w-[360px]"
+            className="flex flex-col items-end select-none text-right w-[32%] max-w-[280px] sm:max-w-[380px]"
           >
             <SparklesText
               text="BIRTHDAY"
               colors={{ first: "#D4AF37", second: "#EF6545" }}
-              sparklesCount={7}
+              sparklesCount={8}
               className="hero-solid-title"
-              style={{ fontSize: 'clamp(2.4rem, 5.2vw, 5.0rem)' }}
+              style={{ fontSize: 'clamp(2.8rem, 6.4vw, 6.0rem)' }}
             />
           </motion.div>
 
@@ -82,7 +82,7 @@ export default function WaveHero() {
       </div>
 
       {/* z-20: "MINI MA'AM" positioned clearly at the bottom in front */}
-      <div className="absolute inset-x-0 bottom-1.5 sm:bottom-2.5 md:bottom-3 z-20 overflow-hidden pointer-events-none flex items-center justify-center">
+      <div className="absolute inset-x-0 bottom-0 sm:bottom-0.5 md:bottom-1 z-20 overflow-hidden pointer-events-none flex items-center justify-center">
         <h2 className="hero-static-mini-mam">
           MINI MA'AM
         </h2>

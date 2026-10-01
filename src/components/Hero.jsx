@@ -153,7 +153,7 @@ export default function Hero() {
               {/* Greeting Header */}
               <div className="letter-greeting-header px-2">
                 <h1 className="letter-giant-title">A Notification from Everyone at CCC</h1>
-                <p className="letter-script-subtitle">Delivered with gratitude, warmth & all our love ✦</p>
+                <p className="letter-script-subtitle">Delivered with warmth ✦</p>
               </div>
             </motion.div>
 

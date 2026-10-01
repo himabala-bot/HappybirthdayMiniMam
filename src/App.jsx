@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import CursorFollower from './components/CursorFollower';
+import CursorTrail from './components/ui/cursor-trail';
+import Navbar from './components/Navbar';
 import WaveHero from './components/WaveHero';
 import Hero from './components/Hero';
 import { MagicText } from './components/ui/magic-text';
@@ -46,8 +47,11 @@ export default function App() {
       {/* Scroll Progress Bar */}
       <motion.div className="scroll-progress-bar" style={{ scaleX }} />
 
-      {/* Smooth Cursor Animation */}
-      <CursorFollower />
+      {/* Global Cursor Trail */}
+      <CursorTrail color="bg-[#EF6545]" size={10} count={8} />
+
+      {/* Floating Pill Sticky Navbar */}
+      <Navbar />
 
       <main className="relative z-10">
         {/* Full-Viewport Interactive Dither & Wave Hero Section */}
