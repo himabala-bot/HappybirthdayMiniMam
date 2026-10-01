@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { CONFETTI_PALETTE } from '../data/tributeData';
 
@@ -63,12 +63,11 @@ export default function Navbar() {
     if (!target) return;
 
     if (item.id === 'letter') {
-      // Scroll into the interactive envelope portion
       const top = target.getBoundingClientRect().top + window.scrollY;
       const targetScroll = top + target.offsetHeight * 0.4;
       window.scrollTo({ top: targetScroll, behavior: 'smooth' });
     } else {
-      const headerOffset = 75;
+      const headerOffset = 80;
       const elementPosition = target.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -83,7 +82,7 @@ export default function Navbar() {
     e.stopPropagation();
     confetti({
       particleCount: 75,
-      spread: 60,
+      spread: 65,
       origin: { y: 0.15 },
       colors: CONFETTI_PALETTE,
       ticks: 200,
@@ -97,37 +96,37 @@ export default function Navbar() {
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-3 sm:top-5 inset-x-0 z-[100] flex justify-center pointer-events-none px-3 sm:px-4"
+      className="fixed top-3.5 sm:top-5 inset-x-0 z-[100] flex justify-center pointer-events-none px-3 sm:px-6"
     >
       <nav
-        className={`pointer-events-auto relative flex items-center gap-1 sm:gap-1.5 p-1.5 rounded-full border transition-all duration-300 select-none ${
+        className={`pointer-events-auto relative flex items-center justify-between gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full border transition-all duration-300 select-none max-w-fit shadow-[0_10px_35px_rgba(66,47,14,0.08)] ${
           scrolled
-            ? 'bg-white/85 backdrop-blur-xl border-[#422F0E]/12 shadow-[0_12px_36px_rgba(66,47,14,0.12)]'
-            : 'bg-white/75 backdrop-blur-lg border-[#422F0E]/8 shadow-[0_6px_24px_rgba(66,47,14,0.06)]'
+            ? 'bg-white/90 backdrop-blur-xl border-[#422F0E]/12 shadow-[0_12px_36px_rgba(66,47,14,0.12)]'
+            : 'bg-white/80 backdrop-blur-lg border-[#422F0E]/8'
         }`}
       >
         {/* Brand Chip */}
         <button
           onClick={(e) => handleNavClick(e, navItems[0])}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-[#1F150E] hover:bg-black/[0.04] transition-colors cursor-pointer"
+          className="flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-bold text-[#1F150E] hover:bg-black/[0.04] transition-colors cursor-pointer shrink-0"
         >
           <span className="text-[#EF6545] font-black text-sm">✦</span>
           <span className="font-extrabold tracking-tight hidden sm:inline">Mini Ma'am</span>
         </button>
 
-        <div className="h-4 w-[1px] bg-[#422F0E]/10 mx-0.5" />
+        <div className="h-4 w-[1px] bg-[#422F0E]/10 mx-0.5 shrink-0 hidden sm:block" />
 
-        {/* Nav Links with Animated Active Indicator */}
-        <div className="flex items-center gap-0.5 sm:gap-1">
+        {/* Nav Links with Generous Horizontal Spacing */}
+        <div className="flex items-center gap-1 sm:gap-2">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`relative px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-bold tracking-tight transition-colors duration-200 cursor-pointer ${
+                className={`relative px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-[13px] font-semibold tracking-tight transition-colors duration-200 cursor-pointer whitespace-nowrap ${
                   isActive
-                    ? 'text-[#EF6545]'
+                    ? 'text-[#EF6545] font-bold'
                     : 'text-[#5C4A38] hover:text-[#1F150E] hover:bg-black/[0.03]'
                 }`}
               >
@@ -144,13 +143,15 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Mini Celebration Popping Button */}
+        <div className="h-4 w-[1px] bg-[#422F0E]/10 mx-0.5 shrink-0 hidden md:block" />
+
+        {/* Celebration Popping Button */}
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.92 }}
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.94 }}
           onClick={triggerCelebrate}
-          className="ml-1 flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-full bg-gradient-to-r from-[#EF6545] to-[#F49625] text-white text-xs font-bold shadow-sm hover:shadow-md transition-all cursor-pointer"
-          title="Shoot confetti!"
+          className="flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#EF6545] to-[#F49625] text-white text-xs sm:text-[13px] font-bold shadow-sm hover:shadow-md transition-all cursor-pointer shrink-0"
+          title="Shoot celebratory confetti!"
         >
           <span className="text-xs">🎉</span>
           <span className="hidden md:inline">Celebrate</span>
