@@ -118,9 +118,9 @@ function TiltGreetingCard({ item, idx }) {
 
 export default function GreetingsWall() {
   return (
-    <section id="greetings" className="site-section">
+    <section id="greetings" className="site-section border-t-0 pt-10 sm:pt-14 pb-20">
       <div className="site-section-container">
-        <div className="site-section-header" style={{ marginBottom: '3rem' }}>
+        <div className="site-section-header" style={{ marginBottom: '2.5rem' }}>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

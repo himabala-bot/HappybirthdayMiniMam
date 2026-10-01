@@ -59,7 +59,7 @@ export default function App() {
         </div>
 
         {/* Tribute Quote with Hover Image Previews Section */}
-        <section className="magic-text-section-wrapper py-6">
+        <section className="magic-text-section-wrapper pt-6 pb-0">
           <MagicText />
         </section>
 

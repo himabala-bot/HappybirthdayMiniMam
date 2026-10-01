@@ -130,9 +130,9 @@ export const LinkPreview = ({
 
 export const MagicText = ({ className = "" }: { text?: string; className?: string }) => {
   return (
-    <div className="relative w-[86vw] max-w-[1040px] mx-auto flex flex-col items-center justify-center px-4 sm:px-6 py-12 md:py-16 text-center">
+    <div className="relative w-[86vw] max-w-[1040px] mx-auto flex flex-col items-center justify-center px-4 sm:px-6 pt-10 pb-4 text-center">
       {/* Section Header */}
-      <div className="mb-20 sm:mb-24 md:mb-28 flex flex-col items-center">
+      <div className="mb-24 sm:mb-28 md:mb-32 flex flex-col items-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#000000] tracking-[-0.03em] mb-2.5">
           The Heart of Our Team
         </h2>
