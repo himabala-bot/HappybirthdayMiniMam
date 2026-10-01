@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import CursorTrail from './components/ui/cursor-trail';
-import Navbar from './components/Navbar';
 import WaveHero from './components/WaveHero';
 import Hero from './components/Hero';
 import { MagicText } from './components/ui/magic-text';
@@ -44,9 +43,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full relative bg-white text-[#422F0E] selection:bg-[#FCC4C0] selection:text-[#422F0E] overflow-x-clip">
-      {/* Sticky Pill-shaped Glassmorphic Navigation */}
-      <Navbar />
-
       {/* Global Interactive Cursor Trail */}
       <CursorTrail color="bg-[#EF6545]" size={9} count={6} />
 

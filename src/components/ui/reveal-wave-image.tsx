@@ -80,11 +80,10 @@ void main() {
     distortedScreenUv.y += ripple; 
   } 
   
-  // Aspect-Ratio Preserving UV Mapping with Safe Top Header Clearance:
-  // Fits 100% of the composition (party hat, face, cake, hands) with zero cropping
-  // and comfortable clearance below the sticky top navbar.
-  float fitScale = 0.86;
-  vec2 centeredUv = (distortedScreenUv - vec2(0.5, 0.44)) / fitScale + 0.5;
+  // Aspect-Ratio Preserving UV Mapping:
+  // Fits 100% of the composition (party hat, face, cake, hands) with zero cropping!
+  float fitScale = 0.94;
+  vec2 centeredUv = (distortedScreenUv - 0.5) / fitScale + 0.5;
   
   vec2 imageUv = centeredUv;
   if (uViewportAspect > uImageAspect) {
