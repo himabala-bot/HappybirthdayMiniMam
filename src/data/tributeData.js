@@ -103,7 +103,7 @@ export const awardsData = [
 export const greetingsData = [
   {
     id: 1,
-    name: "Nagaveer",
+    name: "Mr. Nagaveer",
     initials: "NV",
     role: "Management",
     dept: "Management",
@@ -117,7 +117,7 @@ export const greetingsData = [
   },
   {
     id: 2,
-    name: "Srini",
+    name: "Mr. Srini",
     initials: "SR",
     role: "Strategy | Experience | Governance",
     dept: "Strategy | Experience | Governance",
@@ -145,7 +145,7 @@ export const greetingsData = [
   },
   {
     id: 4,
-    name: "Tapomoy Chakraborty",
+    name: "Mr. Tapomoy Chakraborty",
     initials: "TC",
     role: "MIS",
     dept: "MIS",
@@ -173,7 +173,7 @@ export const greetingsData = [
   },
   {
     id: 6,
-    name: "Srinivasan P",
+    name: "Mr. Srinivasan P",
     initials: "SP",
     role: "IT Admin",
     dept: "IT Admin",

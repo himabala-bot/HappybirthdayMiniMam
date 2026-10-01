@@ -23,55 +23,57 @@ export default function Navbar() {
   };
 
   return (
-    <motion.header
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-4 sm:top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-auto"
-    >
-      <nav className="flex items-center gap-2 sm:gap-4 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-xl bg-white/80 border border-[#422F0E]/12 shadow-[0_8px_30px_rgb(0,0,0,0.08)] select-none">
-        {/* Brand Pill */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF6EE] text-[#1F150E] font-bold text-xs sm:text-sm tracking-tight transition-all hover:bg-[#F2ECE1] cursor-pointer"
-        >
-          <span className="text-xs">👑</span>
-          <span>Mini Ma'am</span>
-        </button>
+    <div className="fixed top-4 sm:top-5 inset-x-0 z-50 flex justify-center items-center pointer-events-none px-3">
+      <motion.header
+        initial={{ y: -25, opacity: 0, scale: 0.95 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        className="pointer-events-auto"
+      >
+        <nav className="flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-3.5 py-1.5 rounded-full backdrop-blur-xl bg-white/90 border border-[#422F0E]/12 shadow-[0_8px_30px_rgba(66,47,14,0.08)] ring-1 ring-black/[0.02] select-none">
+          {/* Brand Pill */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="group flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FAF6EE] text-[#1F150E] font-bold text-xs sm:text-sm tracking-tight transition-all hover:bg-[#F2ECE1] cursor-pointer"
+          >
+            <span className="text-xs transition-transform group-hover:scale-110">👑</span>
+            <span>Mini Ma'am</span>
+          </button>
 
-        {/* Navigation Links */}
-        <div className="hidden sm:flex items-center gap-1 text-xs font-semibold text-[#5C4A38]">
-          <button
-            onClick={() => scrollToSection('outlook-tribute')}
-            className="px-3 py-1 rounded-full hover:text-[#EF6545] hover:bg-[#FAF6EE]/80 transition-all cursor-pointer"
-          >
-            Envelope
-          </button>
-          <button
-            onClick={() => scrollToSection('greetings')}
-            className="px-3 py-1 rounded-full hover:text-[#EF6545] hover:bg-[#FAF6EE]/80 transition-all cursor-pointer"
-          >
-            Greetings
-          </button>
-          <button
-            onClick={() => scrollToSection('pillars')}
-            className="px-3 py-1 rounded-full hover:text-[#EF6545] hover:bg-[#FAF6EE]/80 transition-all cursor-pointer"
-          >
-            Chronicle
-          </button>
-        </div>
+          {/* Navigation Links */}
+          <div className="flex items-center gap-0.5 sm:gap-1 text-xs font-semibold text-[#5C4A38]">
+            <button
+              onClick={() => scrollToSection('outlook-tribute')}
+              className="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-[#EF6545] hover:bg-[#FAF6EE] transition-all cursor-pointer"
+            >
+              Envelope
+            </button>
+            <button
+              onClick={() => scrollToSection('greetings')}
+              className="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-[#EF6545] hover:bg-[#FAF6EE] transition-all cursor-pointer"
+            >
+              Greetings
+            </button>
+            <button
+              onClick={() => scrollToSection('pillars')}
+              className="px-2.5 sm:px-3 py-1.5 rounded-full hover:text-[#EF6545] hover:bg-[#FAF6EE] transition-all cursor-pointer"
+            >
+              Chronicle
+            </button>
+          </div>
 
-        {/* Quick Celebration Trigger */}
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={triggerConfetti}
-          className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#EF6545] text-white font-bold text-xs shadow-sm hover:bg-[#E05232] transition-colors cursor-pointer"
-        >
-          <span>🎉</span>
-          <span>Celebrate</span>
-        </motion.button>
-      </nav>
-    </motion.header>
+          {/* Quick Celebration Trigger */}
+          <motion.button
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={triggerConfetti}
+            className="flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#EF6545] to-[#F49625] text-white font-bold text-xs shadow-sm hover:opacity-95 transition-all cursor-pointer ml-0.5"
+          >
+            <span className="text-xs">🎉</span>
+            <span>Celebrate</span>
+          </motion.button>
+        </nav>
+      </motion.header>
+    </div>
   );
 }
