@@ -34,12 +34,10 @@ export function CursorTrail({
     };
   }, [isVisible]);
 
-  // Create an array of springs, each following the one in front of it
   return (
     <>
       {isVisible &&
         Array.from({ length: count }).map((_, index) => {
-          // Higher index elements have more damping/delay
           const springConfig = {
             stiffness: 300 - index * 30,
             damping: 25 + index * 2,
@@ -87,7 +85,6 @@ function TrailDot({
     y.set(coords.y);
   }, [coords, x, y]);
 
-  // Calculate size and opacity based on index (shrinking tail)
   const dotSize = size * (1 - index / count);
   const opacity = 1 - index / count;
 

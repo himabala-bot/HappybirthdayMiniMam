@@ -53,7 +53,7 @@ export default function WaveHero() {
             <SparklesText
               text="HAPPY"
               colors={{ first: "#D4AF37", second: "#EF6545" }}
-              sparklesCount={8}
+              sparklesCount={7}
               className="hero-solid-title"
               style={{ fontSize: 'clamp(3.2rem, 7.2vw, 6.8rem)' }}
             />
@@ -72,9 +72,9 @@ export default function WaveHero() {
             <SparklesText
               text="BIRTHDAY"
               colors={{ first: "#D4AF37", second: "#EF6545" }}
-              sparklesCount={8}
+              sparklesCount={7}
               className="hero-solid-title"
-              style={{ fontSize: 'clamp(2.8rem, 6.4vw, 6.0rem)' }}
+              style={{ fontSize: 'clamp(2.8rem, 6.2vw, 5.8rem)' }}
             />
           </motion.div>
 

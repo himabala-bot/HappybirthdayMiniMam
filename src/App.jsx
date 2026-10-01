@@ -44,14 +44,14 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full relative bg-white text-[#422F0E] selection:bg-[#FCC4C0] selection:text-[#422F0E] overflow-x-clip">
+      {/* Sticky Pill-shaped Glassmorphic Navigation */}
+      <Navbar />
+
+      {/* Global Interactive Cursor Trail */}
+      <CursorTrail color="bg-[#EF6545]" size={9} count={6} />
+
       {/* Scroll Progress Bar */}
       <motion.div className="scroll-progress-bar" style={{ scaleX }} />
-
-      {/* Global Cursor Trail */}
-      <CursorTrail color="bg-[#EF6545]" size={10} count={8} />
-
-      {/* Floating Pill Sticky Navbar */}
-      <Navbar />
 
       <main className="relative z-10">
         {/* Full-Viewport Interactive Dither & Wave Hero Section */}
@@ -63,7 +63,7 @@ export default function App() {
         </div>
 
         {/* Tribute Quote with Hover Image Previews Section */}
-        <section className="magic-text-section-wrapper pt-6 pb-0">
+        <section id="tribute-heart" className="magic-text-section-wrapper pt-6 pb-0">
           <MagicText />
         </section>
 
